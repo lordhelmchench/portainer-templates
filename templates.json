@@ -1,25 +1,80 @@
 [
   {
-    "type": "stack",
-    "title": "Wordpress",
-    "description": "Wordpress setup with a MySQL database",
-    "note": "Deploys a Wordpress instance connected to a MySQL database.",
-    "categories": ["CMS"],
+    "title": "Chronocommand",
+    "description": "Time management",
+    "categories": ["docker"],
     "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-    "repository": {
-      "url": "https://github.com/portainer/templates",
-      "stackfile": "stacks/wordpress/docker-stack.yml"
-    },
+    "logo": "https://raw.githubusercontent.com/kristkat/custom-templates-portainer/master/Hourglass.png",
+    "image": "registry:latest",
     "ports": [
-      "80/tcp"
-    ],	
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Database root password",
-        "description": "Password used by the MySQL root user."
-      }
-    ]
+      "5000/tcp"
+    ],
+    "volumes": ["/var/lib/registry"]
+  },  
+  {
+    "title": "ScaleIT",
+    "description": "App for AOI machines",
+    "categories": ["docker"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/kristkat/custom-templates-portainer/master/logo_social_media_ROUND.png",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": ["/var/lib/registry"]
+  },
+  {
+    "title": "Funktion Server",
+    "description": "Manages funktions",
+    "categories": ["docker"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/kristkat/custom-templates-portainer/master/365px-Lambda_logo.svg_.png",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": ["/var/lib/registry"]
+  },
+  
+  {
+    "title": "Redmine",
+    "description": "Open-source project management tool",
+    "categories": ["project-management"],
+    "platform": "linux",
+    "logo": "https://cloudinovasi.id/assets/img/logos/redmine.png",
+    "image": "redmine:latest",
+    "ports": [
+      "3000/tcp"
+    ],
+    "volumes": ["/usr/src/redmine/files"]
+  },
+  
+  {
+    "title": "Gitlab",
+    "description": "Open-source project management tool",
+    "categories": ["project-management"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/kristkat/custom-templates-portainer/master/stacked_wm_no_bg.png",
+    "image": "redmine:latest",
+    "ports": [
+      "3000/tcp"
+    ],
+    "volumes": ["/usr/src/redmine/files"]
   }
+  ,
+  {
+    "title": "Elasticsearch",
+    "description": "Open-source search and analytics engine",
+    "categories": ["database"],
+    "platform": "linux",
+    "logo": "https://cloudinovasi.id/assets/img/logos/elasticsearch.png",
+    "image": "elasticsearch:latest",
+    "ports": [
+      "9200/tcp",
+      "9300/tcp"
+    ],
+    "volumes": ["/usr/share/elasticsearch/data"]
+  }
+  
+  
 ]
